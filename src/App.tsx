@@ -1,11 +1,12 @@
 import "./App.css";
-import FoxyProvider from "./components/foxy-provider";
+import { useFoxyContext } from "./context/foxy-context";
 
 function App() {
+  const { trigger } = useFoxyContext();
+
   return (
     <div className="wrapper">
-      <div>Hello</div>
-      <FoxyProvider />
+      <div onClick={trigger}>Hello</div>
     </div>
   );
 }
